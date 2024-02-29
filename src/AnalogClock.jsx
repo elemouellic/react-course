@@ -1,19 +1,22 @@
-import { useEffect, useState } from 'react';
+// AnalogClock.jsx
+import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import './AnalogClock.css';
 
-function AnalogClock() {
+function AnalogClock({ timeZone }) {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        const timerID = setInterval(() => tick(), 1000);
+        function tick() {
+            const dateInTimeZone = new Date(new Date().toLocaleString("en-US", { timeZone }));
+            setDate(dateInTimeZone);
+        }
+
+        const timerID = setInterval(tick, 1000);
         return function cleanup() {
             clearInterval(timerID);
         };
-    }, []);
-
-    function tick() {
-        setDate(new Date());
-    }
+    }, [timeZone]);
 
     const secondsRatio = ((date.getSeconds() / 60) * 360) - 90;
     const minutesRatio = ((date.getMinutes() / 60) * 360) - 90;
@@ -31,5 +34,9 @@ function AnalogClock() {
         </svg>
     );
 }
+
+AnalogClock.propTypes = {
+    timeZone: PropTypes.string.isRequired,
+};
 
 export default AnalogClock;

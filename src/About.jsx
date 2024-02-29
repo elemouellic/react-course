@@ -1,12 +1,15 @@
 import Clock from "./Clock.jsx";
 import AnalogClock from "./AnalogClock.jsx";
+import {useState} from "react";
 
 function About() {
     const projects = [
         {name: 'Projet 1', link: '#'},
         {name: 'Projet 2', link: '#'},
+
         // Ajoutez plus de projets ici
     ];
+    const [timeZone, setTimeZone] = useState("Europe/Paris");
 
     return (
         <div>
@@ -21,8 +24,10 @@ function About() {
                     </li>
                 ))}
             </ul>
-            <AnalogClock />
-            <Clock />
+            <div>
+                <Clock timeZone={timeZone} changeTimeZone={setTimeZone}/>
+                <AnalogClock timeZone={timeZone}/>
+            </div>
         </div>
 
 

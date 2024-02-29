@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom';
 import AnalogClock from './AnalogClock';
 
 const Navbar = () => {
+    const timeZone = "Europe/Paris";
     return (
         <nav>
-            <a href="/"><AnalogClock /></a>
+            <a href="/"><AnalogClock timeZone={timeZone} /></a>
             <ul>
                 <li>
                     <Link to="/">Home</Link>

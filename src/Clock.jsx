@@ -1,10 +1,27 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
+import "./Clock.css";
 
-function Clock() {
+function Clock({ timeZone, changeTimeZone }) {
     const [date, setDate] = useState(new Date());
+    const timeZoneButtons = (
+    <div className="containerButton">
+        <button className="buttonHour" onClick={() => changeTimeZone("Europe/Paris")}>Paris</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("America/New_York")}>New York</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Tokyo")}>Tokyo</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Australia/Sydney")}>Sydney</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("America/Los_Angeles")}>Los Angeles</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Dubai")}>Dubai</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Europe/Moscow")}>Moscou</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Kolkata")}>Calcutta</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("America/Argentina/Buenos_Aires")}>Buenos Aires</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Africa/Johannesburg")}>Johannesburg</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Pacific/Auckland")}>Auckland</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Shanghai")}>Shanghai</button>
+    </div>
+);
 
     useEffect(() => {
-        const timerID = setInterval(() => tick(), 1000);
+        const timerID = setInterval(() => tick(), 10);
         return function cleanup() {
             clearInterval(timerID);
         };
@@ -16,9 +33,20 @@ function Clock() {
 
     return (
         <div>
-            <h2>Il est {date.toLocaleTimeString()}</h2>
+            <h2>Il est {date.toLocaleTimeString("fr-FR", { timeZone })}</h2>
+            {timeZoneButtons}
         </div>
     );
 }
+
+import PropTypes from 'prop-types';
+
+// Your Clock component code here...
+
+Clock.propTypes = {
+    changeTimeZone: PropTypes.func.isRequired,
+    timeZone: PropTypes.string.isRequired,
+};
+console.log(Clock.propTypes);
 
 export default Clock;
