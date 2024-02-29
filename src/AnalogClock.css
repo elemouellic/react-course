@@ -1,0 +1,35 @@
+.clock {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform: rotate(90deg);
+}
+
+.clock-face {
+    stroke: #333;
+    fill: white;
+    stroke-width: 2px;
+}
+
+.hand {
+    stroke: #333;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transition: all 0.05s;
+    transition-timing-function: steps(1, end);
+}
+
+.hour-hand {
+    stroke-width: 6px;
+}
+
+.minute-hand {
+    stroke-width: 4px;
+}
+
+.second-hand {
+    stroke: #FF0000;
+    stroke-width: 2px;
+}
