@@ -11,13 +11,14 @@ function Clock({ timeZone, changeTimeZone }) {
         <button className="buttonHour" onClick={() => changeTimeZone("Australia/Sydney")}>Sydney</button>
         <button className="buttonHour" onClick={() => changeTimeZone("America/Los_Angeles")}>Los Angeles</button>
         <button className="buttonHour" onClick={() => changeTimeZone("Asia/Dubai")}>Dubai</button>
-        <button className="buttonHour" onClick={() => changeTimeZone("Europe/Moscow")}>Moscou</button>
-        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Kolkata")}>Calcutta</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Europe/Moscow")}>Москва</button>
+        <button className="buttonHour" onClick={() => changeTimeZone("Asia/Kolkata")}>Kolkata</button>
         <button className="buttonHour" onClick={() => changeTimeZone("America/Argentina/Buenos_Aires")}>Buenos Aires</button>
         <button className="buttonHour" onClick={() => changeTimeZone("Africa/Johannesburg")}>Johannesburg</button>
         <button className="buttonHour" onClick={() => changeTimeZone("Pacific/Auckland")}>Auckland</button>
         <button className="buttonHour" onClick={() => changeTimeZone("Asia/Shanghai")}>Shanghai</button>
     </div>
+
 );
 
     useEffect(() => {
