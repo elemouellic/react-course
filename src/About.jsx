@@ -17,7 +17,7 @@ function About() {
     };
     return (
         <div>
-            <h1>À propos de moi</h1>
+            <h1>Simon Cussonnet, Torel (Eure)</h1>
             <p>Je suis un développeur web spécialisé en React. J'aime créer des applications web modernes et réactives.</p>
 
             <h2>Mes projets</h2>
