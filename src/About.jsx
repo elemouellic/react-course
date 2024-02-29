@@ -4,13 +4,17 @@ import {useState} from "react";
 
 function About() {
     const projects = [
-        {name: 'Projet 1', link: '#'},
-        {name: 'Projet 2', link: '#'},
-
+        {name: 'Clique moi', link: '#'}
         // Ajoutez plus de projets ici
     ];
     const [timeZone, setTimeZone] = useState("Europe/Paris");
-
+    const [clickCounts, setClickCounts] = useState(new Array(projects.length).fill(0));
+    const handleClick = (index) => {
+        const newClickCounts = [...clickCounts];
+        newClickCounts[index]++;
+        setClickCounts(newClickCounts);
+        console.log(clickCounts);
+    };
     return (
         <div>
             <h1>À propos de moi</h1>
@@ -20,7 +24,9 @@ function About() {
             <ul>
                 {projects.map((project, index) => (
                     <li key={index}>
-                        <a href={project.link}>{project.name}</a>
+                        <a href={project.link} onClick={() => handleClick(index)}>
+                            {project.name} <span className="clickCount">{clickCounts[index]} fois</span>
+                        </a>
                     </li>
                 ))}
             </ul>
