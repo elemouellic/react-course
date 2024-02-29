@@ -1,6 +1,7 @@
 import Clock from "./Clock.jsx";
 import AnalogClock from "./AnalogClock.jsx";
 import {useState} from "react";
+import UltimateBoard from "./UltimateBoard.jsx";
 
 function About() {
     const projects = [
@@ -33,6 +34,7 @@ function About() {
             <div>
                 <Clock timeZone={timeZone} changeTimeZone={setTimeZone}/>
                 <AnalogClock timeZone={timeZone}/>
+                <UltimateBoard/>
             </div>
         </div>
 

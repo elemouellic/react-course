@@ -1,0 +1,24 @@
+.cell {
+    /*box-sizing: border-box; !* Inclut le padding et la bordure dans la taille de la cellule *!*/
+    padding: 0;
+    outline: none;
+    border-radius: 8px;
+    font-size: 2em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #efefef;
+    border: 1px solid #4b4b4b;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    min-height: 50px;
+    min-width: 50px;
+    contain: content;
+    margin: 0 3px;
+}
+.cell:hover {
+    border-color: #b7b7b7;
+}
+
+.cell:focus {
+ outline:none;
+}

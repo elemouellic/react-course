@@ -1,0 +1,14 @@
+.cell-X {
+    background-color: rgba(145, 8, 23, 0.95); /* rouge pour le gagnant X */
+}
+
+.cell-O {
+    background-color: rgba(15, 5, 104, 0.95); /* bleu pour le gagnant O */
+    color: #e0e0e0;
+}
+
+.board-row-wrapper{
+    border: 1px solid #4b4b4b;
+    padding: 5px 2px 0 2px;
+    border-radius: 8px;
+}
